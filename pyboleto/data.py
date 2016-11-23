@@ -476,7 +476,7 @@ class BoletoData(object):
 
     @staticmethod
     def modulo11(num, base=9, r=0):
-        if not isinstance(num, str):
+        if not isinstance(num, basestring):
             raise TypeError
         soma = 0
         fator = 2
