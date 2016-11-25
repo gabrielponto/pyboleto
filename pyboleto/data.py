@@ -481,7 +481,10 @@ class BoletoData(object):
         soma = 0
         fator = 2
         for c in reversed(num):
-            soma += int(c) * fator
+			try:
+				soma += int(c) * fator
+			except ValueError:
+				raise ValueError(u'Número para cálculo do Módulo 11 inválido: %r' % num)
             if fator == base:
                 fator = 1
             fator += 1
